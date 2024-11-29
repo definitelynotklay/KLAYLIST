@@ -25,6 +25,7 @@
     --box-text: #ffffff;
     --box-text2: #000000;
     --sub: #000000;
+    --mono: #000000;
   }
   
   /* Dark Mode Variables */
@@ -46,6 +47,7 @@
     --box-text: #ffffff;
     --box-text2: #ffffff;
     --sub: #fff;
+    --mono: #ffffff;
   } 
 
   html, body {
@@ -78,6 +80,10 @@
     text-align: center;
     margin: 1rem;
     color: var(--btn-text);
+  }
+
+  @view-transition {
+    navigation: auto;
   }
 
   /* Header */
@@ -124,6 +130,22 @@
 
 .theme-toggle:hover {
     box-shadow: 0px 0px 20px #888888;
+}
+
+.main-button {
+  cursor: pointer;
+  color: var(--toggle-text);
+  background-color: var(--toggle-bg);
+  font-family: "Orienta", sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 2rem;
+  transition: .3s ease-in-out;
+}
+
+.main-button:hover {
+  background-color: black;
+  color: white;
 }
 
   /* Hamburger Button */
@@ -174,6 +196,7 @@
 
 .sub-head {
   color: var(--sub);
+  text-align: center;
 }
 
         /* Card styling */
@@ -266,12 +289,16 @@
   .featured-item {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
   }
   .featured-item img {
-    min-width: 20%;
+    min-width: 50%;
     max-width: 150px;
     border-radius: 8px;
     margin-right: 10px;
+    border-style: solid;
+    border-color: white;
   }
   .featured-item .btn {
     display: inline-block;
@@ -282,9 +309,11 @@
     margin-top: 1rem;
     transition: .3s ease-in-out;
   }
+
   .featured-item .btn:hover {
     box-shadow: 0px 0px 20px #888888;
-}
+  }
+
 
   .side-hero {
     width: 100%;
@@ -324,7 +353,7 @@
   .recent-reviews {
     background-color: var(--card-bg);
     color: var(--text-color);
-    padding: 1.5rem;
+    padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -353,11 +382,104 @@
     color: var(--sec-text);
   }
 
+  .review-card img {
+    width: 100%; 
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+    /* filter: grayscale(100%) sepia(100%) hue-rotate(95deg) saturate(300%) brightness(70%);
+    transition: filter 0.3s ease; */
+  }
+
+  /* .review-card img:hover {
+    filter: none;
+  } */
+
+  /* Grid Review Card */
+
+  .grid-review-card {
+    background-color: black;
+    border-radius: 8px;
+    width: 100%; /* Allows the card to take up its full column */
+    max-width: 100%; /* Optional: Limits card growth */
+    margin: 0 auto;
+    padding: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .grid-review-card:hover {
+    box-shadow: 0px 0px 20px #888888;
+  }
+
+  .grid-review-card img {
+    width: 100%;
+    padding: 10px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .grid-review-card, h3 p {
+    text-align: center;
+    color: white;
+  }
+
+  .flex5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; /* Adds consistent spacing between cards */
+    padding: 1rem; /* Optional: Adds inner spacing around the container */
+    width: 100%; /* Ensures the container does not exceed its parent */
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) { /* For smaller screens */
+      .flex5 {
+          grid-template-columns: repeat(2, 1fr); 
+      }
+  }
+
+  @media (max-width: 480px) { /* For iPhone and similar small screens */
+    .flex5 {
+        grid-template-columns: repeat(2, 1fr); /* Force exactly 2 cards per row */
+        gap: 0.5rem; /* Optional: Smaller gap for tighter layouts */
+    }
+    .grid-review-card {
+      font-size: 12px;
+    }
+  }
+
+  .flex6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; /* Adds consistent spacing between cards */
+    padding: 1rem; /* Optional: Adds inner spacing around the container */
+    width: 100%; /* Ensures the container does not exceed its parent */
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) { /* For smaller screens */
+    .flex6 {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  @media (max-width: 480px) { /* For iPhone and similar small screens */
+    .flex6 {
+        grid-template-columns: repeat(2, 1fr); /* Force exactly 2 cards per row */
+        gap: 0.5rem; /* Optional: Smaller gap for tighter layouts */
+    }
+    .grid-review-card {
+      font-size: 12px;
+    }
+  }
+
 /* S-Side Section */
 
   .s-side img {
     width: 15%;
     margin: 5px;
+    margin-top: 1.5rem;
     cursor: pointer;
     transition: .3s ease-in-out;
   }
@@ -369,6 +491,20 @@
   .s-side img, .init {
     margin-left: 3.5rem;
   }
+
+  /* Quote Stuff */
+
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quote-content {
+    font-family: "Orienta", sans-serif;
+    background-color: red; 
+  }
+  
 
   /* Underground Section */
 
@@ -403,6 +539,55 @@
 
   .ug-card img:hover {
     box-shadow: 0px 0px 20px var(--shadow-color);
+  }
+
+  /* Navbar Dropdown Menu */
+
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    list-style: none;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    display: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 8rem;
+  }
+  
+  .dropdown-menu li {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    color: var(--header-text);
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Ensure dropdown doesn't interfere with other nav styles */
+  .nav-items li {
+    position: relative;
   }
 
   /* Define the keyframes for rotation */
@@ -880,6 +1065,14 @@
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
+  object-fit: cover;
+}
+
+.article-image {
+  display: block;     
+  width: 100%;        
+  object-fit: cover;
+  background-position: center;
 }
 
 .article-content h2 {
@@ -1010,6 +1203,10 @@
   }
   .indent {
     text-indent: 0;
+  }
+  .dropdown-menu {
+    width: 100%;
+    left: 0;
   }
 }
 

@@ -151,3 +151,48 @@ document.addEventListener("DOMContentLoaded", () => {
 //     }
 //   });
 // }
+
+// Dropdown
+
+document.querySelectorAll('.dropdown-toggle').forEach((toggle) => {
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const dropdownMenu = toggle.nextElementSibling;
+    dropdownMenu.classList.toggle('show');
+  });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-menu').forEach((menu) => {
+      menu.classList.remove('show');
+    });
+  }
+});
+
+// Quote Generator
+
+function randomText() {
+    // Array of text options
+    const texts = [
+        "I hope you're having a great day today!",
+        "Doesn't the desktop version of this look nice?",
+        "The day is beautiful, enjoy this day!",
+        "Did you meditate today? I strongly recommend it. \nEven if just for a moment.",
+        "Thank you for visiting!",
+        "2@85 697 +@; 43@$ 5(8#?",
+        "What's on the menu today?",
+        "Hello there, and how've you been?",
+        "Are you the chum with dry skin?",
+    ];
+    
+    // Get a random index from the array
+    const randomIndex = Math.floor(Math.random() * texts.length);
+    
+    // Insert random text into the element
+    document.getElementById("randomText").innerText = texts[randomIndex];
+}
+
+// Run the function when the page loads
+window.onload = randomText;

@@ -17,12 +17,19 @@
       <button id="hamburger" class="hamburger">&#9776;</button>
       <ul id="nav-items" class="nav-items">
         <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+          <li class="dropdown">
+            <a href="#genres" class="dropdown-toggle">Content</a>
+            <ul class="dropdown-menu">
+              <li><a href="album-reviews.html">Album Reviews</a></li>
+              <li><a href="#pop">Artist Reviews</a></li>
+              <li><a href="article.html">Articles</a></li>
+              <li><a href="#jazz">Matchups</a></li>
+            </ul>
+          </li>
         <li><a href="#about">About</a></li>
         <button id="theme-toggle" class="theme-toggle">Dark Mode</button>
       </ul>      
     </nav>
-    
   </header>
 
     <div class="overwrap">
@@ -35,7 +42,7 @@
   <main>
     <div class="flex">
     <section class="featured">
-      <h1 class="sub-head">Featured Review</h1>
+      <!-- <h1 class="sub-head">Featured Review</h1> -->
       <div class="featured-item">
         <img id="featured-image" src="ph.png" alt="Featured Album">
         <div>
@@ -48,11 +55,10 @@
 
     <section class="side-hero">
         <h1 class="sub-head">Featured Artists</h1>
-        <div class="s-side">
-            <img class="init" src="ph.png">
-            <img src="ph.png">
-            <img src="ph.png">
-            <img src="ph.png">
+        <div class="quote-container">
+          <div class="quote-content">
+              <h4 id="randomText"></h4>
+          </div>
         </div>
     </section>
     </div>
@@ -61,36 +67,52 @@
       <h1 class="sub-head">Recent Reviews</h1><br>
       <div class="review-grid">
         <div class="review-card">
-          <img src="ph.png" alt="Album 1">
-          <h3>Album Title 1</h3>
-          <p>Quick review snippet...</p>
+          <img src="covers/Juice WRLD/TPNE.jpg" alt="Album 1">
+          <h3>The Party Never Ends</h3>
+          <p>Juice WRLD</p>
           <a href="#read-more">Read More</a>
         </div>
         <div class="review-card">
-          <img src="ph.png" alt="Album 2">
-          <h3>Album Title 2</h3>
-          <p>Quick review snippet...</p>
+          <img src="covers/TAEYEON/Letter To Myself.jpg" alt="Album 2">
+          <h3>Letter To Myself</h3>
+          <p>TAEYEON</p>
           <a href="#read-more">Read More</a>
         </div>
         <div class="review-card">
-          <img src="ph.png" alt="Album 3">
-          <h3>Album Title 3</h3>
-          <p>Quick review snippet...</p>
+          <img src="covers/Yves/I DID.jpg" alt="Album 3">
+          <h3>I Did</h3>
+          <p>Yves</p>
           <a href="#read-more">Read More</a>
         </div>
       </div>
+
+      <center><a href="album-reviews.html"><button class="main-button">More Reviews</button></a></center>
+
     </section><br>
 
     <section class="recent-reviews" id="reviews">
       <h1 class="sub-head">Recent Articles</h1><br>
       <div class="review-grid">
         <div class="review-card">
-          <img src="artists/PENTAGON2.jpg" alt="Album 1">
+          <img src="artists/PENTAGON2.jpg">
           <h3>Rating Every Single PENTAGON Project</h3>
-          <p>Does Tessa have elite music taste???</p>
           <a href="Rating Every Single PENTAGON Project.html">Read More</a>
         </div>
+
+        <div class="review-card">
+          <img src="article-imgs/Ken And Friends Pop Out.png">
+          <div class="article-image"></div>
+          <h3>Is West Coast Hip-Hop Making A Comeback?</h3>
+          <a href="#">Coming Soon</a>
+        </div>
+
+        <div class="review-card">
+          <img src="article-imgs/HYLICS.jpg">
+          <h3>Hylics: My Favorite Video Game OST</h3>
+          <a href="#">Coming Soon</a>
+        </div>
       </div>
+      <center><a href="article.html"><button class="main-button">More Articles</button></a></center>
     </section>
 
 
@@ -118,6 +140,7 @@
   </div>
   </section>
 </main>
+
   <footer>
     <p>&copy; 2024 KLAYLIST. All rights reserved.</p>
     <p>Follow me on <a href="https://www.instagram.com/itsjust_klaymorr/?locale=gb&hl=am-et">Instagram</a></p>
