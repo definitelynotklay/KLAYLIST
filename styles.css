@@ -1378,6 +1378,31 @@
   }
 }
 
+@media (max-width: 930px) {
+  .left-banner h3 {
+    font-size: 20px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .left-banner h3 {
+    font-size: 15px;
+    margin-top: 0.2rem;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 800px) {
+  #spin-card {
+    display: inline-block;
+    width: 100%;
+    justify-self: center;
+  }
+
+}
+
 /* Rating Section */
 
   /* .star-rating {
